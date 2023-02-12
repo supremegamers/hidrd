@@ -23,9 +23,9 @@
  */
 
 #include <string.h>
-#include "hidrd/cfg.h"
-#include "hidrd/util/str.h"
-#include "hidrd/item/short.h"
+#include <hidrd/cfg.h>
+#include <hidrd/util/str.h>
+#include <hidrd/item/short.h>
 
 static uint32_t
 get_unsigned(hidrd_item_short_data_size size, const uint8_t *pin)

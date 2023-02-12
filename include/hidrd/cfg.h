@@ -1,5 +1,12 @@
+/*
+ * vim:nomodifiable
+ *
+ * ********** DO NOT EDIT *************
+ * This file is generated from cfg.h.m4
+ * ************************************
+ */
 /** @file
- * @brief HID report descriptor - usage ID description
+ * @brief HID report descriptor - configuration
  *
  * Copyright (C) 2010 Nikolai Kondrashov
  *
@@ -22,24 +29,16 @@
  * @author Nikolai Kondrashov <spbnick@gmail.com>
  */
 
-#include <hidrd/cfg.h>
-#include <hidrd/util/tkn.h>
-#include <hidrd/usage/id_desc.h>
+#ifndef __HIDRD_CFG_H__
+#define __HIDRD_CFG_H__
 
+/** Defined if options library is built */
+#define HIDRD_WITH_OPT
 
-bool
-hidrd_usage_id_desc_valid(const hidrd_usage_id_desc *desc)
-{
-    return desc != NULL &&
-           hidrd_usage_id_valid(desc->value) &&
-           hidrd_usage_type_set_valid(desc->type_set)
-#ifdef HIDRD_WITH_TOKENS
-           && hidrd_tkn_valid(desc->token)
-#endif
-#ifdef HIDRD_WITH_NAMES
-           && desc->name != NULL
-#endif
-           ;
-}
+/** Defined if tokens should be supported across all relevant libraries */
+#define HIDRD_WITH_TOKENS
 
+/** Defined if names should be supported across all relevant libraries */
+#define HIDRD_WITH_NAMES
 
+#endif /* __HIDRD_CFG_H__ */
